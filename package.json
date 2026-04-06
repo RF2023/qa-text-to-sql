@@ -1,0 +1,37 @@
+{
+  "name": "qa-text-to-sql",
+  "version": "1.0.0",
+  "description": "QA-focused TypeScript Text-to-SQL app",
+  "main": "dist/server.js",
+  "scripts": {
+    "dev": "tsx src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "typecheck": "tsc --noEmit",
+    "prepare": "husky"
+  },
+  "keywords": [
+    "typescript",
+    "express",
+    "sqlite",
+    "llm",
+    "text-to-sql",
+    "qa"
+  ],
+  "author": "RF2023",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.20.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.0",
+    "@types/node": "^20.14.0",
+    "husky": "^9.1.7",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.15.0",
+    "typescript": "^5.7.0"
+  }
+}
