@@ -4,9 +4,57 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>QA Text-to-SQL</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <h1>QA Text-to-SQL</h1>
-  <p>Starter app is running.</p>
+  <div class="page">
+    <header class="header">
+      <h1>QA Text-to-SQL</h1>
+      <p>Ask questions about bugs, test cases, and releases in plain English.</p>
+    </header>
+
+    <main class="main">
+      <section class="query-card">
+        <form id="queryForm">
+          <label class="input-label" for="questionInput">Your question</label>
+          <div class="input-row">
+            <input
+              id="questionInput"
+              type="text"
+              placeholder="e.g. How many critical bugs are open?"
+              autocomplete="off"
+              required
+            />
+            <button type="submit" id="submitBtn">Ask</button>
+          </div>
+        </form>
+
+        <div class="examples">
+          <span class="examples-label">Try:</span>
+          <button class="example-btn" type="button">Show all open bugs</button>
+          <button class="example-btn" type="button">How many critical bugs are open?</button>
+          <button class="example-btn" type="button">List test cases that failed</button>
+          <button class="example-btn" type="button">Which bugs were reported by alice?</button>
+        </div>
+      </section>
+
+      <div id="loading" class="loading hidden">Thinking…</div>
+      <div id="errorBox" class="error-box hidden"></div>
+
+      <section id="results" class="results hidden">
+        <div class="sql-block">
+          <span class="sql-label">Generated SQL</span>
+          <pre id="sqlOutput"></pre>
+        </div>
+        <div class="explanation-block">
+          <span class="explanation-label">Explanation</span>
+          <p id="explanationOutput"></p>
+        </div>
+        <div id="tableWrap"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
 </body>
 </html>
